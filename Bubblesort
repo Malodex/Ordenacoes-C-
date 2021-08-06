@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+void imprime(int v[],int n){
+    for(int i=0;i<n;i++){
+        cout<<v[i]<<" ";
+    }
+    cout<<endl;
+}
+void bubblesort(int v[],int n)
+{
+    int aux;
+    for(int i=0; i< n-1; i++)
+    {
+        for(int j=0; j<n-i-1; j++)
+        {
+            if(v[j] > v[j+1])
+            {
+                aux=v[j];
+                v[j]=v[j+1];
+                v[j+1]=aux;
+                aux=0;
+            }
+        }
+    }
+    imprime(v,n);
+}
+int main()
+{
+    int t;
+    int v[]={4,2,5,1,9,3,8,7,6};
+    t=sizeof(v)/sizeof(v[0]);
+    cout<<"Vetor Recebido: ";
+    imprime(v,t);
+    cout<<"Vetor Ordenado: ";
+    bubblesort(v,t);
+
+return 0;
+}
